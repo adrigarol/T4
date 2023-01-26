@@ -1,0 +1,19 @@
+{% extends "base.njk" %}
+{% block titulo %}Libros | Listado{% endblock %}
+{% block contenido %}
+    <div class="container">
+        <h1>Listado de libros</h1>
+        {% for libro in libros %}
+            <div class="row m-1">
+                <div class="p-1 col-6">{{ libro.titulo }}</div>
+                <div class="col-auto">
+                    <a class="btn btn-success" href="/libros/{{ libro.id }}">Ver ficha</a>
+                </div>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col-12">No hay libros que mostrar.</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
